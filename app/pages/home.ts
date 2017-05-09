@@ -64,7 +64,7 @@ export class HomePage {
   }
 
   tossed(index) {
-    let localAllDogs = this.allDogs.concat()
+    let localAllDogs = this.allDogs.concat();
     localAllDogs.splice(index, 1);
     let localDisplayedDogs = this.displayedDogs.concat();
     localDisplayedDogs.splice(localDisplayedDogs.length - 1, 1);
@@ -75,8 +75,6 @@ export class HomePage {
     this.allDogs = localAllDogs;
     this.displayedDogs = localDisplayedDogs;
   }
-
-
 
   getBackgroundUrl(url) {
     return `url('${url}')`;

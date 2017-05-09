@@ -63,7 +63,7 @@ export class HorizontalEdgePanGesture extends PanGesture {
         this.onPanStartHandler(event);
       }
     } catch (ex) {
-      console.debug(`onPanStartHandler: Error occured - ${ex.message}`);
+      console.debug(`onPanStartHandler: Error occurred - ${ex.message}`);
       if ( ex instanceof CaptureError ) {
         this.started = false;
         this.captured = false;
@@ -100,14 +100,14 @@ export class HorizontalEdgePanGesture extends PanGesture {
         throw new Error('Invalid starting position');
       }
 
-      // we are enabling the gesture recognizer,
-      // but we haven't started recongizing
+      // We are enabling the gesture recognizer,
+      // but we haven't started recognizing
       // or captured a gesture yet
       this.recognizerEnabled = true;
       this.started = false;
       this.captured = false;
     } catch (ex) {
-      console.log(`Gesture Recognizer: Error occured during pointerdown - ${ex.message}`);
+      console.log(`Gesture Recognizer: Error occurred during pointerdown - ${ex.message}`);
     }
   }
 }

@@ -106,7 +106,7 @@ export class PinchGesture extends BaseHammerGesture {
         this.onPinchStartHandler(event);
       }
     } catch (ex) {
-      console.debug(`onPinchStartHandler: Error occured - ${ex.message}`);
+      console.debug(`onPinchStartHandler: Error occurred - ${ex.message}`);
       if ( ex instanceof CaptureError ) {
         this.started = false;
         this.captured = false;
@@ -128,7 +128,7 @@ export class PinchGesture extends BaseHammerGesture {
         this.onPinchMoveHandler(event);
       }
     } catch (ex) {
-      console.debug(`onPinchMoveHandler: Error occured - ${ex.message}`);
+      console.debug(`onPinchMoveHandler: Error occurred - ${ex.message}`);
     }
   }
 
@@ -146,7 +146,7 @@ export class PinchGesture extends BaseHammerGesture {
         this.onPinchInHandler(event);
       }
     } catch (ex) {
-      console.debug(`onPinchInHandler: Error occured - ${ex.message}`);
+      console.debug(`onPinchInHandler: Error occurred - ${ex.message}`);
     }
   }
 
@@ -164,7 +164,7 @@ export class PinchGesture extends BaseHammerGesture {
         this.onPinchOutHandler(event);
       }
     } catch (ex) {
-      console.debug(`onPinchOutHandler: Error occured - ${ex.message}`);
+      console.debug(`onPinchOutHandler: Error occurred - ${ex.message}`);
     }
   }
 
@@ -182,7 +182,7 @@ export class PinchGesture extends BaseHammerGesture {
         this.onPinchEndHandler(event);
       }
     } catch (ex) {
-      console.debug(`onPinchEndHandler: Error occured - ${ex.message}`);
+      console.debug(`onPinchEndHandler: Error occurred - ${ex.message}`);
     } finally {
       if ( this.delegate ) {
         this.delegate.release();
@@ -198,7 +198,7 @@ export class PinchGesture extends BaseHammerGesture {
         this.onPinchCancelHandler(event);
       }
     } catch (ex) {
-      console.debug(`onPinchCancelHandler: Error occured - ${ex.message}`);
+      console.debug(`onPinchCancelHandler: Error occurred - ${ex.message}`);
     } finally {
       if ( this.delegate ) {
         this.delegate.release();
