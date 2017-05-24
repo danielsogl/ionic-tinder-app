@@ -65,7 +65,7 @@ export class TapGesture extends BaseHammerGesture {
         this.onTapHandler(event);
       }
     } catch (ex) {
-      console.debug(`onTapHandler: Error occured - ${ex.message}`);
+      console.debug(`onTapHandler: Error occurred - ${ex.message}`);
       if ( ex instanceof CaptureError ) {
         this.notCaptured(event);
       }
@@ -87,7 +87,7 @@ export class TapGesture extends BaseHammerGesture {
       }
       this.recognizerEnabled = true;
     } catch (ex) {
-        console.debug(`TapGestureRecognizer: Error occured during pointerdown - ${ex.message}`);
+        console.debug(`TapGestureRecognizer: Error occurred during pointerdown - ${ex.message}`);
     }
   }
 

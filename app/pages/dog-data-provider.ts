@@ -33,7 +33,7 @@ export class PoochProvider {
   }
 }
 
-function getRandomDogAge(){
+function getRandomDogAge() {
   let max = 8;
   let min = 1;
   return Math.floor(Math.random() * (max - min + 1)) + min;

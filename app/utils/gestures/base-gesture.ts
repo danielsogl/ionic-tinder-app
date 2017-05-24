@@ -72,16 +72,16 @@ export abstract class BaseHammerGesture {
         this.pointerUp(event);
       };
       if ( ! this.eventBlocker ) {
-        // hack to make up for buggy definition file
+        // Hack to make up for buggy definition file
         let eventType = <number> <any> event.eventType;
-        // we only care about start AND (end or cancel) events
+        // We only care about start AND (end or cancel) events
         if ( eventType === Hammer.INPUT_START ) {
           this.pointerDown(event);
         } else if ( eventType === Hammer.INPUT_END || eventType === Hammer.INPUT_CANCEL ) {
-          // okay, bear with me here for a second
+          // Okay, bear with me here for a second
           // Some gestures require touch up before being recognized - for example Swipe!
-          // so, our pointerUp logic needs to execute *after* the gesture had a chance to recognized
-          // So, we need to let hammer do it's thing and try to recongize, then run our code
+          // So, our pointerUp logic needs to execute *after* the gesture had a chance to recognized
+          // So, we need to let hammer do it's thing and try to recognize, then run our code
           // So just defer execution of our code until the next event loop
           this.eventBlocker = true;
           setTimeout( () => {
@@ -106,14 +106,14 @@ export abstract class BaseHammerGesture {
           throw new Error('Missing delegate');
         }
 
-        // we are enabling the gesture recognizer,
-        // but we haven't started recongizing
+        // We are enabling the gesture recognizer,
+        // but we haven't started recognizing
         // or captured a gesture yet
         this.recognizerEnabled = true;
         this.started = false;
         this.captured = false;
       } catch (ex) {
-        console.log(`Gesture Recognizer: Error occured during pointerdown - ${ex.message}`);
+        console.log(`Gesture Recognizer: Error occurred during pointerdown - ${ex.message}`);
       }
     }
 
@@ -135,7 +135,7 @@ export abstract class BaseHammerGesture {
         this.started = false;
         this.captured = false;
       } catch (ex) {
-        console.log(`Gesture Recognizer: Error occured during pointerup - ${ex.message}`);
+        console.log(`Gesture Recognizer: Error occurred during pointerup - ${ex.message}`);
       }
     }
 
@@ -159,7 +159,7 @@ export abstract class BaseHammerGesture {
       return this.recognizer;
     }
 
-    /* default implementation, implemenet if needed */
+    /* default implementation, implement if needed */
     canStart(event: HammerInput): boolean { return true; }
     pointerMove(event: HammerInput) {};
     notCaptured(event: HammerInput) { }
